@@ -7,7 +7,7 @@
     if (isset($_POST['email'])) {
         $pdo = new PDO("mysql:host=localhost;dbname=emailsnativa", "root", "");
         if(!$pdo){
-            die('Erro ao criar a conexão');
+            die('Erro ao criar a conexão!');
         }
             $email = htmlspecialchars((empty($_POST['email'])) ? '0' : $_POST['email']);
             $executa = $pdo->query("INSERT INTO emails(email) values ('".$email."')");
